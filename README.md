@@ -10,4 +10,3 @@ flutter clean && flutter pub get && flutter packages pub run build_runner watch 
 
 
 
-# need vids bt 38,39,40,41,42,54 etc

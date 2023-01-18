@@ -143,13 +143,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void validateLogin(BuildContext ctx) async {
     final _sharedPrefs = await SharedPreferences.getInstance();
-    _userName = _sharedPrefs.getString("userName")!;
-    _password = _sharedPrefs.getString("pssword")!;
+    // _userName = _sharedPrefs.getString("userName")!;
+    // _password = _sharedPrefs.getString("pssword")!;
     _uName = _userNameController.text;
     _pword = _passwordController.text;
-    if (_userName == _uName && _password == _pword) {
+    if (_uName == _pword) {
       // REDIRECT TO HOME
-      // await _sharedPrefs.setBool(SAVE_KEY_NAME, true);
+      // check
+      await _sharedPrefs.setBool(SAVE_KEY_NAME, true);
 
       navigatorKey.currentState?.pushReplacementNamed("homeScreen");
     } else {
